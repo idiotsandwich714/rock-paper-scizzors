@@ -1,6 +1,6 @@
-const computerChoice = Math.floor(Math.random() * 3);
-
 function getComputerChoice() {
+    let computerChoice = Math.floor(Math.random() * 3);
+
     if (computerChoice === 0) {
         return "rock";
     } else if (computerChoice === 1) {
@@ -8,27 +8,52 @@ function getComputerChoice() {
     } else {
         return "scissors";
     }
-    
 }
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        return "tie game";
+        return tie;
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
-        return "you won";
+        playerScore++;
+        return win;
     } else if (playerSelection === "paper" && computerSelection === "rock") {
-        return "you won";
+        playerScore++;
+        return win;
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
-        return "you won";
+        playerScore++;
+        return win;
     } else {
-        return "loser";
+        computerScore++;
+        return lose;
     }
 }
 
-const playerSelection = "paper";
-const computerSelection = getComputerChoice();
+let playerScore = parseInt(0);
+let computerScore = parseInt(0);
+let tie = "Round Result: Tie";
+let win = "Round Result: Player Win";
+let lose = "Round Result: Player Lose";
 
-console.log("Player : " + playerSelection);
-console.log("Computer : " + computerSelection);
+function game() {
+    for (let i = 0; i < 5; i++) {
+        let playerSelection = prompt("Rock, Paper, or Scissors?", "").toLowerCase();
+        const computerSelection = getComputerChoice();
+        console.log("Player Selection: " + playerSelection);
+        console.log("Computer Selection: " + computerSelection);
+        console.log(playRound(playerSelection, computerSelection));
+        console.log("Your Score: " + playerScore);
+        console.log("Computer Score: " + computerScore);
+    }
 
-console.log(playRound(playerSelection, computerSelection));
+    if (playerScore > computerScore) {
+        console.log("Game Over: Player Wins");
+    } else if (playerScore === computerScore) {
+        console.log("Game Over: Draw");
+    } else {
+        console.log("Game Over: You're a Loser");
+    }
+}
+
+game();
+
+
