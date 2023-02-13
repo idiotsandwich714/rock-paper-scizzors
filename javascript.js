@@ -1,6 +1,11 @@
+let playerScore = parseInt(0);
+let computerScore = parseInt(0);
+let tie = "Round Result: Tie";
+let win = "Round Result: Player Win";
+let lose = "Round Result: Player Lose";
+
 function getComputerChoice() {
     let computerChoice = Math.floor(Math.random() * 3);
-
     if (computerChoice === 0) {
         return "rock";
     } else if (computerChoice === 1) {
@@ -10,7 +15,12 @@ function getComputerChoice() {
     }
 }
 
-function playRound(playerSelection, computerSelection) {
+function playRound(playerSelection) {
+    const computerSelection = getComputerChoice();
+    console.log("Computer Selection: " + computerSelection);
+    console.log("Player Selection: " + playerSelection);
+    console.log("Computer Score: " + computerScore);
+    console.log("Player Score: " + playerScore);
     if (playerSelection === computerSelection) {
         return tie;
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
@@ -28,12 +38,16 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-let playerScore = parseInt(0);
-let computerScore = parseInt(0);
-let tie = "Round Result: Tie";
-let win = "Round Result: Player Win";
-let lose = "Round Result: Player Lose";
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
 
+rock.addEventListener("click", () => playRound("rock"));
+paper.addEventListener("click", () => playRound("paper"));
+scissors.addEventListener("click", () => playRound("scissors"));
+
+
+/*
 function game() {
     for (let i = 0; i < 5; i++) {
         let playerSelection = prompt("Rock, Paper, or Scissors?", "").toLowerCase();
@@ -55,5 +69,4 @@ function game() {
 }
 
 game();
-
-
+*/
