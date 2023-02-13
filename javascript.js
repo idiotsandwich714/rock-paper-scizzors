@@ -36,28 +36,35 @@ function playRound(playerSelection) {
 
     playerWeapon.textContent = "Player Selection: " + playerSelection;
     computerWeapon.textContent = "Computer Selection: " + computerSelection;
-    playerScoreBoard.textContent = "Player Score: " + playerScore;
-    computerScoreBoard.textContent = "Computer Score: " + computerScore;
+    
     
     if (playerSelection === computerSelection) {
         roundResult.textContent = tie;
+        playerScoreBoard.textContent = "Player Score: " + playerScore;
+        computerScoreBoard.textContent = "Computer Score: " + computerScore;
     } else if (playerSelection === "rock" && computerSelection === "scissors") {
         playerScore++;
         roundResult.textContent = win;
+        playerScoreBoard.textContent = "Player Score: " + playerScore;
+        computerScoreBoard.textContent = "Computer Score: " + computerScore;
     } else if (playerSelection === "paper" && computerSelection === "rock") {
         playerScore++;
         roundResult.textContent = win;
+        playerScoreBoard.textContent = "Player Score: " + playerScore;
+        computerScoreBoard.textContent = "Computer Score: " + computerScore;
     } else if (playerSelection === "scissors" && computerSelection === "paper") {
         playerScore++;
         roundResult.textContent = win;
+        playerScoreBoard.textContent = "Player Score: " + playerScore;
+        computerScoreBoard.textContent = "Computer Score: " + computerScore;
     } else {
         computerScore++;
         roundResult.textContent = lose;
+        playerScoreBoard.textContent = "Player Score: " + playerScore;
+        computerScoreBoard.textContent = "Computer Score: " + computerScore;
     }
 
     if (playerScore === 5) {
-        playerScore = parseInt(0);
-        computerScore = parseInt(0);
         gameResult.textContent = "Game Over: Player Wins the Game!"
         document.getElementById("rock").disabled = true;
         document.getElementById("paper").disabled = true;
@@ -67,8 +74,6 @@ function playRound(playerSelection) {
         document.body.appendChild(reset);
         reset.addEventListener("click", () => window.location.reload());
     } else if (computerScore === 5) {
-        playerScore = parseInt(0);
-        computerScore = parseInt(0);
         gameResult.textContent = "Game Over: Player Wins the Game!"
         document.getElementById("rock").disabled = true;
         document.getElementById("paper").disabled = true;
