@@ -4,18 +4,58 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <link rel="stylesheet" href="./styles.css">
+        <title>Rock, Paper, Scissors Game</title>
     </head>
     <body>
-        <button id="rock" class="btn">Rock</button>
-        <button id="paper" class="btn">Paper</button>
-        <button id="scissors" class="btn">Scissors</button>
-
-        <div id="playerWeapon"></div>
-        <div id="computerWeapon"></div>
-        <div id="playerScoreBoard"></div>
-        <div id="computerScoreBoard"></div>
+        <div class="header">
+            <img src="./images/racingflag.jpg" alt="racing flags">
+            <h1>Rock, Paper, Scissors Racing</h1>
+            <img src="./images/racingflag.jpg" alt="racing flags">
+        </div>
+        <div class="battlefield">
+            <div class="turtleLogo">
+                <img src="./images/mexicanturtle.jpg" alt="mexican turtle">
+            </div>
+            <div class="turtleButtons">
+                <button id="rock" class="btn">Rock</button>
+                <button id="paper" class="btn">Paper</button>
+                <button id="scissors" class="btn">Scissors</button>
+            </div>
+            <div class="turtleSelection">
+                <img src="./images/questionmark.png" alt="question mark" id="turtleSelectionImage">
+            </div>
+            <div class="hareSelection">
+                <img src="./images/questionmark.png" alt="question mark" id="hareSelectionImage">
+            </div>
+            <div class="hareButtons">
+                <button disabled>Rock</button>
+                <button disabled>Paper</button>
+                <button disabled>Scissors</button>
+            </div>
+            <div class="hareLogo">
+                <img src="./images/mexicanrabbit.jpg" alt="mexican rabbit">
+            </div>
+        </div>
         <div id="roundResult"></div>
+        <div class="turtleRaceTrack">
+            <img src="./images/road.png" alt="road" id="turtleroadone">
+            <img src="./images/road.png" alt="road" id="turtleroadtwo">
+            <img src="./images/road.png" alt="road" id="turtleroadthree">
+            <img src="./images/road.png" alt="road" id="turtleroadfour">
+            <img src="./images/road.png" alt="road" id="turtleroadfive">
+        </div>
+        <div class="hareRaceTrack">
+            <img src="./images/road.png" alt="road" id="hareroadone">
+            <img src="./images/road.png" alt="road" id="hareroadtwo">
+            <img src="./images/road.png" alt="road" id="hareroadthree">
+            <img src="./images/road.png" alt="road" id="hareroadfour">
+            <img src="./images/road.png" alt="road" id="hareroadfive">
+        </div>
+
+        
+
+        
         <div id="gameResult"></div>
 
         <script src="./javascript.js"></script>        

@@ -1,0 +1,77 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: xx-large;
+}
+
+.header > img {
+    width: auto;
+    height: 50px;
+}
+
+.battlefield {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.turtleLogo > img,
+.hareLogo > img {
+    width: 300px;
+    height: 300px;
+}
+
+.turtleButtons,
+.hareButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.turtleButtons *,
+.hareButtons * {
+    width: 75px;
+    height: 75px;
+    border-radius: 8px;
+}
+
+#turtleSelectionImage,
+#hareSelectionImage {
+    width: 100px;
+    height: 100px;
+}
+
+.turtleRaceTrack,
+.hareRaceTrack {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.turtleRaceTrack *,
+.hareRaceTrack * {
+    width: 300px;
+    height: 200px;
+}
+
+#roundResult {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    gap: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#roundResult > button {
+    width: 150px;
+    height: 30px;
+    border-radius: 8px;
+}
